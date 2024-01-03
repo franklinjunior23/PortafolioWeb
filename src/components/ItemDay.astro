@@ -1,0 +1,40 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+interface Props {
+  Date: string;
+  Empresa: string;
+  Tecnologies: Technologies[];
+  Description: string;
+}
+export interface Technologies {
+  name: string;
+  icon: Record<string, any> | JSX.Element;
+}
+const { Date, Empresa, Tecnologies, Description } = Astro.props;
+---
+
+<article class="ms-4">
+  <div
+    class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"
+  >
+  </div>
+  <time datetime="" class="text-sm text-gray-400">{Date}</time>
+  <h4 class="text-xl font-semibold text-white">{Empresa}</h4>
+  <ul class="flex mt-2 gap-2">
+    {
+      Tecnologies.map((ItemTecn) => (
+        <li class="flex  items-center py-1 pr-0.5 pl-3 bg-black font-semibold text-sm rounded-lg">
+          {ItemTecn.name} {<ItemTecn.icon Width={30} Height={16} />}
+        </li>
+      ))
+    }
+  </ul>
+  <footer class="mt-3 ms-1">
+    <p class="text-pretty w-[670px] mb-4">
+      {Description.slice(0, 230) + (Description.length ? "..." : "")}
+    </p>
+    <a href={`Jobs/${Empresa}`} class="bg-red-500 py-1 px-3 rounded-lg"
+      >Lean more</a
+    >
+  </footer>
+</article>

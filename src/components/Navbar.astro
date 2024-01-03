@@ -1,0 +1,39 @@
+---
+const PathLinks: Links[] = [
+  { name: "Home", link: "/" },
+  { name: "Jobs", link: "#Jobs" },
+  { name: "Proyects", link: "" },
+  { name: "Contact", link: "" },
+];
+interface Links {
+  name: string;
+  link: string;
+}
+---
+
+<header class="flex justify-between py-6  items-center">
+  <a
+    href="https://github.com/franklinjunior23"
+    class="md:block hidden"
+    target="_blank"
+  >
+    <section
+      class="border pl-3 pr-6 py-1.5 rounded-2xl border-[#5d5d5d] flex items-center gap-2"
+    >
+      <img
+        src="/Img/85268054.jfif"
+        class="rounded-full w-[45px] h-[45px] object-cover"
+        alt=""
+      />
+      <header>
+        <h4 class="font-semibold text-base">Franklin Junior</h4>
+        <span class="text-xs">Software Enginner</span>
+      </header>
+    </section>
+  </a>
+  <nav class="">
+    <ul class="flex gap-7">
+      {PathLinks.map((link) => <a href={link.link} transition:name={link.name}>{link.name}</a>)}
+    </ul>
+  </nav>
+</header>
