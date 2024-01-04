@@ -1,0 +1,16 @@
+---
+import DashboardIntis from "/proyects/DashboardIntis.png";
+interface Props {
+  Image: string;
+  ClassName: string;
+}
+const { Image, ClassName } = Astro.props;
+---
+
+<article class={`h-[400px] cols ${ClassName} `}>
+  <img
+    src={Image}
+    class="object-cover w-full h-full rounded-lg blur-sm hover:blur-0 transition-all cursor-pointer"
+    alt=""
+  />
+</article>
