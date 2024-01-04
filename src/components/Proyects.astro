@@ -2,7 +2,7 @@
 import ItemProyect from "./ItemProyect.astro";
 const ProyectList: Proyects[] = [
   { image: "/proyects/DashboardIntis.png", ClassName:"col-span-2"},
-  { image: "/proyects/PortafolioWeb.png", ClassName:"col-span-1"},
+  { image: "/proyects/PortafolioWeb.png", ClassName:"col-span-0"},
   { image: "/proyects/AgenteInti.png", ClassName:"col-span-1"},
 ];
 interface Proyects {
@@ -13,7 +13,7 @@ interface Proyects {
 
 <main class="py-10">
   <h2 class="text-2xl text-center py-10">Proyects</h2>
-  <section class="grid grid-cols-3  grid-rows-2 mt-5 gap-6">
+  <section class="grid grid-cols-2  grid-rows-2 mt-5 gap-6">
    {ProyectList.map((Proyect)=>(
     <ItemProyect Image={Proyect.image} ClassName={Proyect.ClassName} />
    ))}
